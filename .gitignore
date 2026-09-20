@@ -2,6 +2,14 @@
 _recon/
 _shots/
 
+# Superseded staging folder: the site now lives at the repository root so that
+# GitHub Pages and Vercel serve it without extra configuration.
+site/
+
 # Node
 node_modules/
 package-lock.json
+
+# Python
+__pycache__/
+*.pyc

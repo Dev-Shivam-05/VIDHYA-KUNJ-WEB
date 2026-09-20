@@ -2,7 +2,7 @@
 // has readable contrast — the three defects reported from the browser.
 const { chromium } = require('playwright');
 const path = require('path');
-const SITE = 'file:///' + path.resolve(__dirname, '..', 'site').split(path.sep).join('/');
+const SITE = 'file:///' + path.resolve(__dirname, '..').split(path.sep).join('/');
 
 const lum = c => {
   const [r, g, b] = c.match(/\d+/g).map(Number).map(v => {

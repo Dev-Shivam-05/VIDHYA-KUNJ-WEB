@@ -1,7 +1,7 @@
 // Find which elements stick out past the viewport on mobile.
 const { chromium } = require('playwright');
 const path = require('path');
-const SITE = 'file:///' + path.resolve(__dirname, '..', 'site').split(path.sep).join('/');
+const SITE = 'file:///' + path.resolve(__dirname, '..').split(path.sep).join('/');
 
 (async () => {
   const b = await chromium.launch({ channel: 'chrome' });

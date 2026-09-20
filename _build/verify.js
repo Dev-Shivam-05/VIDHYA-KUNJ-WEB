@@ -1,7 +1,7 @@
 // Fast functional check: counters, lazy images, tabs, filters, lightbox, drawer.
 const { chromium } = require('playwright');
 const path = require('path');
-const SITE = 'file:///' + path.resolve(__dirname, '..', 'site').split(path.sep).join('/');
+const SITE = 'file:///' + path.resolve(__dirname, '..').split(path.sep).join('/');
 
 (async () => {
   const b = await chromium.launch({ channel: 'chrome' });

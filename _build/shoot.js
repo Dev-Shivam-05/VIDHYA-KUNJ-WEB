@@ -3,7 +3,7 @@ const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
 
-const SITE = 'file:///' + path.resolve(__dirname, '..', 'site').replace(/\\/g, '/');
+const SITE = 'file:///' + path.resolve(__dirname, '..').replace(/\\/g, '/');
 const OUT = path.resolve(__dirname, '..', '_shots');
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -28,7 +28,7 @@ const PAGES = ['index', 'about', 'pre-primary', 'primary', 'secondary',
       page.on('pageerror', e => errs.push('pageerror: ' + e.message));
       page.on('requestfailed', r => {
         const u = r.url();
-        if (u.startsWith('file:')) errs.push('404: ' + u.split('/site/')[1]);
+        if (u.startsWith('file:')) errs.push('404: ' + u.replace(SITE + '/', ''));
       });
 
       await page.goto(`${SITE}/${p}.html`, { waitUntil: 'load' });

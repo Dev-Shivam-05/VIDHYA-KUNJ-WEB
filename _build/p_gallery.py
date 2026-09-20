@@ -29,7 +29,7 @@ CATS = [("all", "All photos"), ("campus", "Campus"), ("festival", "Festivals"),
 
 def campus_shots():
     """Every school-owned campus photo we recovered, as gallery tiles."""
-    d = os.path.join(ROOT, "site", "assets", "img", "campus")
+    d = os.path.join(ROOT, "assets", "img", "campus")
     out = []
     seen = set()
     for f in sorted(os.listdir(d)):
@@ -90,7 +90,7 @@ def build():
             f'<span class="gal-cap">{cap}</span></button>')
 
     # gallery-album thumbnails recovered from the school's NextGEN albums
-    gdir = os.path.join(ROOT, "site", "assets", "img", "gallery")
+    gdir = os.path.join(ROOT, "assets", "img", "gallery")
     for f in sorted(os.listdir(gdir)):
         if not re.search(r"\.(jpe?g|png|webp)$", f, re.I):
             continue

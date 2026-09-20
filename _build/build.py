@@ -5,7 +5,9 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(os.path.dirname(HERE), "site")
+# the pages are served from the repository root so that GitHub Pages and
+# Vercel pick them up with no extra configuration
+OUT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 PAGES = [

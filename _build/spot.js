@@ -2,7 +2,7 @@
 const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
-const SITE = 'file:///' + path.resolve(__dirname, '..', 'site').split(path.sep).join('/');
+const SITE = 'file:///' + path.resolve(__dirname, '..').split(path.sep).join('/');
 const OUT = path.resolve(__dirname, '..', '_shots');
 fs.mkdirSync(OUT, { recursive: true });
 

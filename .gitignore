@@ -1,0 +1,7 @@
+# Crawl artifacts and screenshots — working files, not part of the deliverable
+_recon/
+_shots/
+
+# Node
+node_modules/
+package-lock.json

@@ -13,3 +13,8 @@ package-lock.json
 # Python
 __pycache__/
 *.pyc
+
+.vercel
+
+# Vercel
+.vercel/

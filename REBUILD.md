@@ -4,12 +4,13 @@ A complete 10-page rebuild of vidyakunjnavsari.edu.in, built from the findings i
 
 ## How to view it
 
-No build step, no server, no dependencies. Open `index.html` in any browser.
+**Live:** https://vidyakunj-navsari.vercel.app
+(mirror: https://dev-shivam-05.github.io/VIDHYA-KUNJ-WEB/)
 
-For the Google Maps embed on the contact page to render, serve it over HTTP instead:
+Locally: no build step, no server, no dependencies — open `index.html` in any browser.
+To exercise the Google Maps embed on the contact page, serve it over HTTP instead:
 
 ```
-cd site
 python -m http.server 8000
 ```
 then open `http://localhost:8000`.

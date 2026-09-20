@@ -1,5 +1,15 @@
 # Vidyakunj Navsari — Website Audit & Redesign
 
+## Live site
+
+| | |
+|---|---|
+| **Primary** | **https://vidyakunj-navsari.vercel.app** |
+| Mirror | https://dev-shivam-05.github.io/VIDHYA-KUNJ-WEB/ |
+
+Both serve the same commit. Open either on a phone, tablet or desktop — no install, no login.
+Every push to `main` redeploys both automatically.
+
 Two deliverables, built 20 September 2026 from a full crawl of **vidyakunjnavsari.edu.in**.
 
 | | |
@@ -59,7 +69,7 @@ broken links         none  (653 links, 141 images, 22 PDFs, all resolve)
 placeholder leaks    none  (no example.com, no +1, no Eastwood, no Colchester)
 ```
 
-Screenshots of every page at both widths are in [`_shots/`](_shots/).
+Re-verified against **both live URLs** after deployment: 20/20 page-and-viewport combinations clean, 0 console errors, 0 broken images, 0 overflow.
 
 ---
 

@@ -147,11 +147,7 @@ def header(current):
   <div class="container">
     <div class="nav">
       <a class="brand" href="index.html">
-        <img src="assets/img/brand/vks-new-Logo.png" alt="{SCHOOL} logo" width="432" height="147">
-        <span class="brand-text">
-          <span class="brand-name">Vidyakunj</span>
-          <span class="brand-sub">English Medium &middot; Navsari</span>
-        </span>
+        <img src="assets/img/brand/vks-new-logo-navsari.png" alt="{SCHOOL}" width="1584" height="301">
       </a>
       <nav aria-label="Main">
         <ul class="nav-menu">{menu}</ul>
@@ -170,7 +166,7 @@ def header(current):
   <div class="drawer-scrim"></div>
   <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
     <div class="drawer-top">
-      <span class="brand-name">Vidyakunj</span>
+      <a class="drawer-brand" href="index.html"><img src="assets/img/brand/vks-new-logo-navsari.png" alt="{SCHOOL}" width="1584" height="301"></a>
       <button class="drawer-close" type="button" aria-label="Close menu">{icon("close")}</button>
     </div>
     <nav>{drawer}

@@ -62,6 +62,10 @@ body{
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
 img,svg,video{display:block;max-width:100%;height:auto}
+/* every inline svg here is a 24x24 icon with no width/height attribute.
+   Without a size they fall back to the SVG default 300x150 box and blow
+   out whatever flex line they sit on. Component rules below override this. */
+svg{width:1.05em;height:1.05em;flex:none}
 button,input,select,textarea{font:inherit;color:inherit}
 h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.15;
   font-weight:600;letter-spacing:-.015em;text-wrap:balance}
@@ -146,15 +150,11 @@ ul,ol{padding-left:1.15rem}
   backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .25s var(--ease)}
 .site-header.scrolled{box-shadow:var(--shadow-2)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);min-height:76px}
-/* flex:none — the wordmark is nowrap, so letting it shrink made it spill
-   over the menu instead of reserving its own width */
-.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex:none}
-.brand img{height:42px;width:auto;flex:none}
-.brand-text{display:flex;flex-direction:column;line-height:1.15}
-.brand-name{white-space:nowrap;font-size:1rem}
-.brand-sub{white-space:nowrap;font-size:.6rem;letter-spacing:.07em}
-.brand-name{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--brand-800);letter-spacing:-.01em}
-.brand-sub{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+/* the logo file is the full lockup (crest + "Vidyakunj English Medium School
+   Navsari"), so the header carries the image alone — any text beside it just
+   repeats the artwork. flex:none keeps it from being squeezed by the menu. */
+.brand{display:flex;align-items:center;text-decoration:none;flex:none}
+.brand img{height:46px;width:auto;flex:none}
 
 .nav-menu{display:flex;align-items:center;gap:.15rem;list-style:none;padding:0;margin:0}
 .nav-menu>li{position:relative}
@@ -188,13 +188,10 @@ ul,ol{padding-left:1.15rem}
   .nav-menu,.nav-cta .btn{display:none}
   .nav-toggle{display:flex}
   .nav{gap:var(--s3)}
-  .brand{min-width:0}
-  .brand-name,.brand-sub{overflow:hidden;text-overflow:ellipsis}
+  .brand img{height:40px}
 }
-@media(max-width:420px){
-  .brand img{height:36px}
-  .brand-sub{display:none}
-}
+@media(max-width:560px){.brand img{height:34px}}
+@media(max-width:380px){.brand img{height:29px}}
 
 /* mobile drawer */
 /* overflow:hidden keeps the off-canvas panel from widening the document
@@ -207,7 +204,9 @@ ul,ol{padding-left:1.15rem}
   box-shadow:var(--shadow-3);transform:translateX(100%);transition:transform .32s var(--ease);
   display:flex;flex-direction:column;overflow-y:auto}
 .drawer.open .drawer-panel{transform:translateX(0)}
-.drawer-top{display:flex;justify-content:space-between;align-items:center;
+.drawer-brand{display:flex;align-items:center;min-width:0}
+.drawer-brand img{height:32px;width:auto}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);
   padding:var(--s4);border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:2}
 .drawer-close{background:none;border:0;cursor:pointer;padding:.4rem;color:var(--ink)}
 .drawer-close svg{width:24px;height:24px}
@@ -232,9 +231,11 @@ ul,ol{padding-left:1.15rem}
 .hero .eyebrow{color:var(--gold-300)}
 .hero .eyebrow::before{background:var(--gold-500)}
 .hero .btn-row{margin-top:var(--s6)}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .95rem;
   border-radius:var(--r-full);background:rgba(212,167,44,.16);border:1px solid rgba(212,167,44,.4);
-  color:var(--gold-300);font-size:var(--step--1);font-weight:600;margin-bottom:var(--s4)}
+  color:var(--gold-300);font-size:var(--step--1);font-weight:600;margin-bottom:var(--s4);
+  line-height:1.2;white-space:nowrap;letter-spacing:.01em;max-width:100%}
+.hero-badge svg{width:1.05em;height:1.05em;flex:none;opacity:.95}
 
 /* page banner (interior pages) */
 .page-hero{position:relative;background:var(--brand-800);color:#fff;overflow:hidden;isolation:isolate}
@@ -489,7 +490,7 @@ table.data td:first-child{color:var(--muted);font-variant-numeric:tabular-nums;w
    white blob, so it sits on a light chip at its real colours instead */
 .footer-brand .logo-chip{display:inline-block;background:#fff;border-radius:var(--r);
   padding:.7rem .9rem;margin-bottom:var(--s4);box-shadow:var(--shadow-1)}
-.footer-brand .logo-chip img{height:44px;width:auto;display:block}
+.footer-brand .logo-chip img{height:38px;width:auto;display:block}
 .footer-brand p{font-size:.9rem;color:var(--brand-300);max-width:38ch}
 .footer-contact li{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;color:var(--brand-200)}
 .footer-contact svg{width:16px;height:16px;flex:none;margin-top:.22rem;opacity:.7}

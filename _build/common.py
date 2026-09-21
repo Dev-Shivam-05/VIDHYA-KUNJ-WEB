@@ -186,8 +186,8 @@ def footer():
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <span class="logo-chip"><img src="assets/img/brand/vks-new-Logo.png"
-              alt="{SCHOOL}" width="432" height="147"></span>
+        <span class="logo-chip"><img src="assets/img/brand/vks-new-logo-navsari.png"
+              alt="{SCHOOL}" width="1584" height="301"></span>
         <p>Founded in 1969 by the Jaycees of Navsari Junior Chamber. English-medium
            education rooted in Indian culture, from Play School to Standard 12.</p>
         <div class="socials">

@@ -490,7 +490,7 @@ table.data td:first-child{color:var(--muted);font-variant-numeric:tabular-nums;w
    white blob, so it sits on a light chip at its real colours instead */
 .footer-brand .logo-chip{display:inline-block;background:#fff;border-radius:var(--r);
   padding:.7rem .9rem;margin-bottom:var(--s4);box-shadow:var(--shadow-1)}
-.footer-brand .logo-chip img{height:44px;width:auto;display:block}
+.footer-brand .logo-chip img{height:38px;width:auto;display:block}
 .footer-brand p{font-size:.9rem;color:var(--brand-300);max-width:38ch}
 .footer-contact li{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;color:var(--brand-200)}
 .footer-contact svg{width:16px;height:16px;flex:none;margin-top:.22rem;opacity:.7}
